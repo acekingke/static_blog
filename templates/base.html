@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+    <title>
+    {% block title %}Home{% endblock title %} | {{ config.SITENAME }}
+    </title>
+    
+     <link href="{{ url_for('static', filename='bootstrap.min.css') }} " rel="stylesheet">
+     <style type="text/css" media="screen">
+       .center {
+        width: auto;
+        display: table;
+        margin-left: auto;
+        margin-right: auto;
+      }
+     </style>
+   
+  </head>
+  <body>
+    <div class="container center">
+    
+      <div class="top">
+        <div class="header">
+          <h1>
+          <a href="{{ url_for('index') }}">{{ config.SITE_NAME }}</a>
+          </h1>
+          
+        </div>
+        <div class="navigation">
+          <!-- Nothing here yet -->
+        </div>
+      </div>
+      <div class="body">
+      {% block content %}
+      {% endblock content %}
+      </div>
+      <hr >
+      <div class="footer">
+        <p>&copy; Copyright 2012 Aceking</p>
+        <p>Contact me via <a href="mailto:aceking.ke@gmail.com">mail</a>
+      </div>
+    </div>
+     
+
+   
+<script src= "{{ url_for('static', filename='jquery.min.js') }}"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src= "{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+
+  </body>
+</html>

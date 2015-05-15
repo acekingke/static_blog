@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+  <div class="entries">
+  <form style="display: inline;" action="{{url_for('search')}}" method="post" name="search"> {{ form.search(size=20)}}<input type="submit" value="Search"></form>
+  <style type="text/css" media="screen">
+      .pagination-page-info {
+          padding: .6em;
+          padding-left: 0;
+          width: 40em;
+          margin: .5em;
+          margin-left: 0;
+          font-size: 12px;
+      }
+      .pagination-page-info b {
+          color: black;
+          background: #6aa6ed;
+          padding-left: 2px;
+          padding: .1em .25em;
+          font-size: 150%;
+      }
+     
+     </style>
+  {{ pagination.info }}
+  {{ pagination.links }}
+  {% for post in posts %}
+    <div class="entry-list-item">
+      
+      <div class="detail">
+        <h1 class="entry-list-title">
+          <a href="{{ url_for('post', name=post.path.replace('posts/', '')) }}">
+            {{ post.title }}
+          </a>
+        </h1>
+        <div class="summary">
+          <p><span>摘要:</span>{{ post.summary }}</p>
+        </div>
+      </div>
+      <div class="date">{{ post.date }}</div>
+    </div>
+  {% endfor %}
+  </div>
+{% endblock content %}
