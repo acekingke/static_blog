@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# Copyright belong to kyc
 from flask import Flask, render_template,g, request
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
