@@ -44,3 +44,9 @@ Windows 用户请运行下面的命令:
 # 运行
 
 	python blog.py
+
+- [ ] blog.py completed
+- [ ] list syntax required
+- [ ] normal **formatting**, @mentions, #1234 refs
+- [ ] incomplete
+- [x] completed
