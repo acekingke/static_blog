@@ -11,3 +11,5 @@ itsdangerous==0.22
 wsgiref==0.1.2
 flask-paginate
 Whoosh
+jieba
+Flask-WTF
