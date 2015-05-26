@@ -10,12 +10,15 @@
     
      <link href="{{ url_for('static', filename='bootstrap.min.css') }} " rel="stylesheet">
      <style type="text/css" media="screen">
-       .center {
-        width: auto;
-        display: table;
-        margin-left: auto;
-        margin-right: auto;
-      }
+      /* Customize container */
+	@media (min-width: 768px) {
+	  .container {
+	    max-width: 730px;
+	  }
+	}
+	.container-narrow > hr {
+	  margin: 30px 0;
+	}
      </style>
    
   </head>
