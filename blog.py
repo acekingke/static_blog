@@ -6,7 +6,7 @@ from flask import Flask, render_template,g, request
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
 from flask.ext.paginate import Pagination
-
+import os
 from search import build_index
 CSRF_ENABLED = True
 SECRET_KEY = 'you-will-never-guess'
@@ -113,4 +113,4 @@ if __name__ == '__main__':
         print whoosh_search([u'执行'])
     else:
         
-        app.run(host='0.0.0.0', debug=True)
+        app.run(host='0.0.0.0', port = 8080, debug=True)
