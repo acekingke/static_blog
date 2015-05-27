@@ -13,3 +13,4 @@ flask-paginate
 Whoosh
 jieba
 Flask-WTF
+gunicorn
