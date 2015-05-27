@@ -59,6 +59,11 @@ def index(page = 1):
     pagination = Pagination(page=page, bs_version=3,total=len(g.all), per_page=PER_PAGE, record_name='posts')
     return render_template('index.html', form = form, posts=posts, pagination=pagination)
 
+@app.route('/build_index')
+def index_build():
+    build_index(WHOOSH_BASE)
+    return "Build sucess !"
+
 @app.route('/search', methods=['GET', 'POST']) 
 def search():
     page=1
