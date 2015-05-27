@@ -14,3 +14,4 @@ Whoosh
 jieba
 Flask-WTF
 gunicorn
+chardet
