@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+  <div class="entries">
+  
+  <style type="text/css" media="screen">
+      .pagination-page-info {
+          padding: .6em;
+          padding-left: 0;
+          width: 40em;
+          margin: .5em;
+          margin-left: 0;
+          font-size: 12px;
+      }
+      .pagination-page-info b {
+          color: black;
+          background: #6aa6ed;
+          padding-left: 2px;
+          padding: .1em .25em;
+          font-size: 150%;
+      }
+     
+     </style>
+  
+  {% for slide in slides %}
+    <div class="entry-list-item">
+      
+      <div class="detail">
+        <h1 class="entry-list-title">
+          <a href="{{ url_for('.one_slide', user_url_slug=slide.path.replace('./content/slides/', '')) }}">
+            {{ slide.title }}
+          </a>
+        </h1>
+         
+      </div>
+      
+    </div>
+  {% endfor %}
+  </div>
+{% endblock content %}

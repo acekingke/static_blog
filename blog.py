@@ -2,12 +2,13 @@
 # -*- coding: utf-8 -*-
 
 # Copyright belong to kyc
-from flask import Flask, render_template,g, request
+from flask import Flask, render_template,g, request, url_for
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
 from flask.ext.paginate import Pagination
 import os
 from search import build_index
+from slider import slide
 CSRF_ENABLED = True
 SECRET_KEY = 'you-will-never-guess'
 ##################################
@@ -25,7 +26,7 @@ DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
 FLATPAGES_ROOT = 'content'
 POST_DIR = 'posts'
-PAGE_DIR = 'pages'
+
 FLATPAGES_EXTENSION = '.md'
 SITE_NAME = u"aceking静态博客"
 SERVER_PORT = 5000
@@ -33,6 +34,8 @@ PER_PAGE=4
 WHOOSH_BASE = './'+FLATPAGES_ROOT+'/'+POST_DIR+'/'
 app = Flask(__name__)
 app.config.from_object(__name__)
+##注册蓝图
+app.register_blueprint(slide)
 flatpages = FlatPages(app)
 freezer = Freezer(app)
 

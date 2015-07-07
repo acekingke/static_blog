@@ -1,3 +1,4 @@
+
 # 首先安装python的虚拟环境virtualenv
 
 如果可以使用 shell ，那么可能 Virtualenv 是你在开发环境和生产环境都想使用的 东西。
